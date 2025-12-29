@@ -623,7 +623,7 @@ br-rootfs-pack:
 	${Q}rm -rf $(BR_MV_VENDOR_DIR)
 
 	# copy rootfs to rawimg dir
-	${Q}cp $(TARGET_OUTPUT_DIR)/images/rootfs.ext4 $(OUTPUT_DIR)/rawimages/rootfs_ext4.$(STORAGE_TYPE)
+	${Q}cp $(BR_DIR)/output/images/rootfs.ext4 $(OUTPUT_DIR)/rawimages/rootfs_ext4.$(STORAGE_TYPE)
 	$(call raw2cimg ,rootfs_ext4.$(STORAGE_TYPE))
 
 # TODO A/B boot is currently not supported when CONFIG_BUILDROOT_FS is enabled
@@ -650,7 +650,7 @@ ifeq ($(CONFIG_BUILDROOT_FS),y)
 	${Q}rm -rf $(OUTPUT_DIR)/br-rootfs
 	${Q}ln -s $(OUTPUT_DIR)/br-rootfs $(OUTPUT_DIR)/fs
 	${Q}mkdir $(OUTPUT_DIR)/br-rootfs
-	${Q}tar xf $(BR_DIR)/output/$(BR_BOARD)/images/rootfs.tar.xz -C $(OUTPUT_DIR)/br-rootfs
+	${Q}tar xf $(BR_DIR)/output/images/rootfs.tar.xz -C $(OUTPUT_DIR)/br-rootfs
 else
 	${Q}ln -s $(OUTPUT_DIR)/rootfs $(OUTPUT_DIR)/fs
 endif

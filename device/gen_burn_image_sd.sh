@@ -20,7 +20,7 @@ echo "BR_DIR: $BR_DIR"
 echo "BR_BOARD: $BR_BOARD"
 
 # genimage command in buildroot host bin
-BR_HOST_BIN="${BR_DIR}/output/${BR_BOARD}/host/bin"
+BR_HOST_BIN="${BR_DIR}/output/host/bin"
 if [ ! -d ${BR_HOST_BIN} ]; then
   echo "host/bin not found, check buildroot output dir!"
   exit 1

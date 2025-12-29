@@ -1,6 +1,0 @@
-config BR2_PACKAGE_DUO_WIRINGX
-	bool "wiringX"
-	help
-	  wiringX for Milk-V Duo series
-
-	  https://github.com/milkv-duo/duo-wiringx
