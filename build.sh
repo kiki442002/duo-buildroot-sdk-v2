@@ -145,9 +145,9 @@ if [ $# -ge 1 ]; then
   else
     source ${TOP_DIR}/build/envsetup_milkv.sh "list" || exit 1
     if [[ ${MILKV_BOARD_ARRAY[@]} =~ (^|[[:space:]])"${1}"($|[[:space:]]) ]]; then
-      #MILKV_BOARD=${1}
-      #echo "$MILKV_BOARD"
-      #source ${TOP_DIR}/build/envsetup_milkv.sh "${1}"
+      MILKV_BOARD=${1}
+      echo "$MILKV_BOARD"
+      source ${TOP_DIR}/build/envsetup_milkv.sh "${1}"
       check_board ${1} || exit $?
       build_info || exit $?
     else

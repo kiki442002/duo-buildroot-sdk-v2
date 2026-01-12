@@ -1,0 +1,5 @@
+SDK_VERSION=musl_riscv64
+board=milkv-duo256m-musl-riscv64-sd
+branch=bpm_analyzer_os
+commit=207dcbb1f
+time=2026-01-10-18:21:53
