@@ -22,3 +22,6 @@ ncscope.*
 
 __pycache__
 .vscode
+
+
+rauc/private.pem
