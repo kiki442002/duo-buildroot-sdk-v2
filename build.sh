@@ -158,8 +158,17 @@ if [ $# -ge 1 ]; then
     fi
   fi
 else
-  source ${TOP_DIR}/build/envsetup_milkv.sh list || exit 1
-  build_usage && exit 0
+   # Si aucun argument n'est donné, on force la configuration pour votre cible
+  TARGET_BOARD="milkv-duo256m-glibc-arm64-sd"
+  show_info "No board specified. Auto-building for: ${TARGET_BOARD}"
+  
+  MILKV_BOARD=${TARGET_BOARD}
+  # On charge l'environnement spécifique à cette carte
+  source ${TOP_DIR}/build/envsetup_milkv.sh "${TARGET_BOARD}"
+  
+  # Vérifications standard du script
+  check_board ${TARGET_BOARD} || exit $?
+  build_info || exit $?
 fi
 
 get_toolchain
