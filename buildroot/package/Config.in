@@ -1568,6 +1568,7 @@ menu "Audio/Sound"
 	source "package/tremor/Config.in"
 	source "package/vo-aacenc/Config.in"
 	source "package/webrtc-audio-processing/Config.in"
+	source "package/rust-bpm-analyzer/Config.in"
 endmenu
 
 menu "Compression and decompression"

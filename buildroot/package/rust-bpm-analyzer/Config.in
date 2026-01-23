@@ -1,0 +1,6 @@
+config BR2_PACKAGE_RUST_BPM_ANALYZER
+    bool "rust-bpm-analyzer"
+    help
+      Downloads the pre-compiled binary of rust-bpm-analyzer.
+
+      https://github.com/kiki442002/rust-bpm-analyzer
